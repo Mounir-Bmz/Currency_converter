@@ -30,7 +30,7 @@ Le Currency converter est une application de conversion de devises utilisant Rea
 git clone git@github.com:Mounir-Bmz/Currency_converter.git
 ```
 
-#### 2. Accéder au répertoire du projet 
+#### 2. Accéder au répertoire du projet
 
 ```console
 cd Currency_converter
