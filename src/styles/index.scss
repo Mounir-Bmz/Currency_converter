@@ -12,9 +12,17 @@ body {
   justify-content: center; 
   align-items: center; 
   height: 100vh; 
+
+	@each $property, $value in v.$BG {
+    #{$property}: $value;
+	}
 }
 
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
   monospace;
+}
+
+.amount {
+	border-radius: 20px;
 }

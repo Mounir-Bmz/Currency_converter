@@ -52,10 +52,6 @@ export default [
     rate: 15244.461735,
   },
   {
-    name: 'Israeli New Sheqel',
-    rate: 3.759468,
-  },
-  {
     name: 'Indian Rupee',
     rate: 78.266835,
   },

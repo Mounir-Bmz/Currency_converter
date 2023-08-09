@@ -10,59 +10,51 @@ import currencies from '../../data/currencies';
 import './App.scss';
 
 class App extends React.Component {
-  // Constructor to initialize the component state
   constructor(props) {
     super(props);
 
-    // Initialize the component state
     this.state = {
-      // Indicate if currency block is open
+      // indique si le bloc des devises est ouvert (affiché)
       currenciesOpen: true,
-      // The amount to be converted
+      // le montant à convertir
       baseAmount: 1,
-      // The name of the currently selected currency
+      // le nom de la devise actuellement sélectionnée
       currencyName: 'United States Dollar',
-      // Input value for the currency search field
+      // valeur de l'input pout le champ de recherche de devise
       inputSearch: '',
     };
-    // Binding the 'handleClick' method to the current instance of the class
-    // This is necessary to preserve the correct context of 'this' inside the method
+
     this.handleClick = this.handleClick.bind(this);
     this.handleClickOnCurrency = this.handleClickOnCurrency.bind(this);
     this.setSearchValue = this.setSearchValue.bind(this);
   }
 
   handleClick() {
-    // Retrieve the current value of currenciesOpen from the state
     const { currenciesOpen } = this.state;
     this.setState({
-      // Toggle the value of currenciesOpen and update the state
       currenciesOpen: !currenciesOpen,
     });
   }
 
-  // Method to handle the click event on a currency item
   handleClickOnCurrency(newCurrencyName) {
     this.setState({
       currencyName: newCurrencyName,
     });
   }
 
-  // Method for updating the `inputSearch` state property
   setSearchValue(newValue) {
     this.setState({
       inputSearch: newValue,
     });
   }
 
-  // Method to compute the converted amount based on the selected currency
   computeAmount() {
     const { currencyName, baseAmount } = this.state;
 
     const selectedCurrency = currencies.find(
       (item) => item.name === currencyName
     );
-    // console.log(selectedCurrency);
+
     const { rate } = selectedCurrency;
 
     const result = baseAmount * rate;
@@ -73,25 +65,25 @@ class App extends React.Component {
   }
 
   filterCurrencies() {
-    // Destructuring the `inputSearch` property from the component's state
+    // aller chercher des infos dans le state
     const { inputSearch } = this.state;
-    // Converting the search input to lowercase for case-insensitive comparison
+    // on passe en minuscules la chaîne à recherche
     const inputSearchLowered = inputSearch.toLowerCase();
-    // Filtering the currencies array based on the search input
+    // appliquer filter sur le tableau des devises
     const filteredCurrencies = currencies.filter((item) => {
-      // Convert the name of each currency to lowercase for case-insensitive comparison
       const nameLowered = item.name.toLowerCase();
-      // Check if the currency's name includes the search input (case-insensitive)
       return nameLowered.includes(inputSearchLowered);
     });
-    // Return the array of filtered currencies
+    // retourner le résultat
     return filteredCurrencies;
   }
 
-  // Render method to render the component's UI
   render() {
-    const { currenciesOpen, baseAmount, currencyName, inputSearch } = this.state;
+    // console.log('[App] render');
+    const { currenciesOpen, baseAmount, currencyName, inputSearch } =
+      this.state;
     const result = this.computeAmount();
+
     const filteredCurrencies = this.filterCurrencies();
 
     return (

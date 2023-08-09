@@ -8,16 +8,17 @@
   background-color: variables.$lightColor;
   font-size: 2em;
   color: variables.$mainColor;
+  // on veut remonter le bouton pour qu'il soit sur le Header
   margin-top: -25px;
 
-  // On hover reverse colors
+  // au hover on inverse les couleurs
   &:hover {
     color: variables.$lightColor;
     background-color: variables.$altColor;
   }
 
   &.custom-button--open {
-    // Apply rotation
+    // on applique une rotation
     transform: rotate(90deg);
   }
 }

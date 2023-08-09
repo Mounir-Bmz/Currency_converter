@@ -1,9 +1,8 @@
-// Import the PropTypes library for type-checking props
 import PropTypes from 'prop-types';
+import React from 'react';
 
 import './Currencies.scss';
 
-// Define the functional component 'Currencies' that takes 'currenciesList' as a prop
 const Currencies = ({
   currenciesList,
   handleClick,
@@ -15,18 +14,14 @@ const Currencies = ({
       <input
         type="text"
         className="currencies-search"
-        placeholder="Rechercher"
+        placeholder="Research"
         value={searchValue}
         onChange={(event) => {
-          // When the user types in the input field, this event handler is triggered
-          // console.log(event.target.value);
-
-          // Transmit the new value in App's state
+          // on veut transmettre la nouvelle valeur dans le state de App
           setSearchValue(event.target.value);
         }}
       />
     </div>
-    {/* Iterate over each item in 'currenciesList' and create an 'li' element */}
     <ul>
       {currenciesList.map((item) => (
         // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/click-events-have-key-events
@@ -34,7 +29,7 @@ const Currencies = ({
           className="currency"
           key={item.name}
           onClick={() => {
-            console.log(`Click on currency : ${item.name}`);
+            // console.log(`Click on currency : ${item.name}`);
             handleClick(item.name);
           }}
         >
@@ -45,7 +40,6 @@ const Currencies = ({
   </div>
 );
 
-// Define the prop types for 'currenciesList' prop
 Currencies.propTypes = {
   currenciesList: PropTypes.arrayOf(
     PropTypes.shape({
