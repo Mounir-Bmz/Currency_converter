@@ -1,0 +1,39 @@
+@use 'src/styles/variables';
+
+.currencies {
+  text-align: left;
+  overflow-y: auto;
+  max-height: 400px;
+
+  .currencies-title {
+    padding: variables.$gutter;
+  }
+
+  .currencies-search {
+    border: none;
+    width: 100%;
+    color: variables.$mainColor;
+    font-size: 1.2em;
+
+    
+    &::placeholder {
+      color: variables.$altColor;
+    }
+    
+    &:focus {
+      outline: none;
+    }
+  }
+  .currency {
+    border-top: 1px solid variables.$altColor;
+    padding: variables.$gutter;
+    font-weight: variables.$fwNormal;
+    cursor: pointer;
+    transition: background-color variables.$slowTransition;
+
+    &:hover {
+      background-color: variables.$altColor;
+      transition: background-color variables.$fastTransition;
+    }
+  }
+}

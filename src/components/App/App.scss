@@ -1,0 +1,10 @@
+@use '../../styles/variables' as v;
+
+.App {
+  background-color: v.$lightColor;
+  width: 350px;
+  margin: 0 auto;
+  text-align: center;
+  color: v.$mainColor;
+  border-radius: 20px;
+}

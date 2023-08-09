@@ -1,0 +1,28 @@
+@use 'reset';
+@use 'variables' as v;
+
+body {
+	margin: 0;
+	font-family: 'League Spartan', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: v.$altColor;
+	
+	display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh; 
+
+	@each $property, $value in v.$BG {
+    #{$property}: $value;
+	}
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
+
+.amount {
+	border-radius: 20px;
+}

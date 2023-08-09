@@ -1,0 +1,19 @@
+// SCSS variables
+$fwBold: 700;
+$fwNormal: 500;
+$fwlight: 300;
+
+$mainColor: #34235A;
+$altColor: #93cdff;
+$lightColor: #fff;
+
+$fastTransition: 0.2s;
+$slowTransition: 1s;
+
+$gutter: 0.8rem;
+
+$BG: (
+  background-image: url("../../docs/images/earth.jpeg"),
+  background-size: cover,
+  background-position: center,
+)
