@@ -1,0 +1,23 @@
+@use 'src/styles/variables';
+
+.custom-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 4px solid variables.$altColor;
+  background-color: variables.$lightColor;
+  font-size: 2em;
+  color: variables.$mainColor;
+  margin-top: -25px;
+
+  // On hover reverse colors
+  &:hover {
+    color: variables.$lightColor;
+    background-color: variables.$altColor;
+  }
+
+  &.custom-button--open {
+    // Apply rotation
+    transform: rotate(90deg);
+  }
+}

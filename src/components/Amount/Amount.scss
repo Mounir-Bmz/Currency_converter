@@ -1,0 +1,16 @@
+@use 'src/styles/variables';
+
+.amount {
+  padding: variables.$gutter * 2;
+  background-color: variables.$lightColor;
+
+  .amount-value {
+    font-weight: variables.$fwBold;
+    font-size: 2em;
+  }
+
+  .amount-currency {
+    font-size: 1.3em;
+    margin-top: variables.$gutter;
+  }
+}
